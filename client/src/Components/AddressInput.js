@@ -1,8 +1,6 @@
 import { GpsFixed, Search } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
 import React, {useEffect, useRef, useState} from 'react'
-// import './App.css'
-// import { Search, GpsFixed } from "@material-ui/icons"
 
 
 const apiKey = 'AIzaSyBr_LpFhD-wYod1TI-0hC5uPQBVbpkTBeo';

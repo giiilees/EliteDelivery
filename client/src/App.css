@@ -437,9 +437,9 @@ nav {
     max-width: 95vw;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .home-bannerImage-container,
-  .about-background-image-container {
+  .about-background-image-container, .home-image-section {
     display: none;
   }
 }

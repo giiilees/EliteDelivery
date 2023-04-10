@@ -1,0 +1,3 @@
+client: belfaresidir@gmail.com ; Azerty11
+Admin: admin@elitedelivery.fr ; Azerty11
+Expert: expert1@elitedelivery.fr ; Azerty11

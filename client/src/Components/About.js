@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import AboutBackground from "../Assets/about-background.png";
 import AboutBackgroundImage from "../Assets/about-background-image.png";
-import { BsFillPlayCircleFill } from "react-icons/bs";
 import Work from "./Work";
 import { ArrowCircleUp } from "@mui/icons-material";
 

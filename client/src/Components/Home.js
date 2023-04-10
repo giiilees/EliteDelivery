@@ -1,7 +1,6 @@
 import React from "react";
 import BannerBackground from "../Assets/home-banner-background.png";
 import BannerImage from "../Assets/home-banner-image.png";
-import Navbar from "./Navbar";
 import { FiArrowRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
@@ -15,10 +14,10 @@ const Home = () => {
         </div>
         <div className="home-text-section">
           <h1 className="primary-heading">
-          Livrez rapidement vos objets en toute simplicité!
+          Livrez en toute sécurité vos objets précieux!
           </h1>
           <p className="primary-text">
-            Profitez d'une livraison rapide et fiable pour tous vos objets avec notre application de livraison facile à utiliser !
+            Profitez d'une livraison rapide et fiable pour tous vos objets précieux avec notre application!
           </p>
           <button onClick={()=>{ navigate('/Commande')}} className="secondary-button">
             Commandez <FiArrowRight />{" "}

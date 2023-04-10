@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { AiFillStar } from "react-icons/ai";
+import React, { useEffect } from "react";
 import CommandeForm from "./CommandeForm";
 import BannerBackground from "../Assets/home-banner-background.png";
 import AboutBackground from "../Assets/about-background.png";
@@ -61,7 +60,6 @@ const Commande = () => {
       {user !== null && (
         <>
           <div className="work-section-top">
-            {/* <p className="primary-subheading">Testimonial</p> */}
             <h1 className="primary-heading">Passez votre commande</h1>
             <p className="primary-text">
               On remplisant ce formulaire , vous allez passez une commande de

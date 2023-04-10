@@ -12,15 +12,13 @@ const initialValues = {
   Nom: "",
   Telephone: "",
   password: "",
-  // location: "",
-  // occupation: "",
   picture: "",
 };
 
 const Contact = () => {
   const form = useRef();
-  const [email, setemail] = useState("");
-  const [message, setmessage] = useState("");
+  // const [email, setemail] = useState("");
+  // const [message, setmessage] = useState("");
 
   const handleFormSubmit = async (values, onSubmitProps) => {
     if (values.email !== "" && values.message !== "") {

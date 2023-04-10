@@ -83,9 +83,7 @@ app.get("/ressources" , getNbrRe);
 /* ROUTES */
 app.use("/auth", authRoutes);
 
-
 /* MONGOOSE SETUP */
-
 
 const PORT = process.env.PORT || 6001;
 mongoose.set('strictQuery', false);

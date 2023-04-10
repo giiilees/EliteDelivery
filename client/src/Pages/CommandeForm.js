@@ -14,13 +14,10 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import {
-  DeleteOutlineOutlined,
-  Visibility,
-  VisibilityOff,
+  DeleteOutlineOutlined
 } from "@mui/icons-material";
 import ClipLoader from "react-spinners/ClipLoader";
 import Dropzone from "react-dropzone";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import AddressInput from "../Components/AddressInput";
 import AddressInput2 from "../Components/AddressInput2";
 import { useSelector } from "react-redux";
@@ -38,19 +35,16 @@ const CommandeSchema = yup.object().shape({
     return Object.keys(obj).length > 0;
   }),
   pictures: yup.array().min(1 , 'Veillez importer au moins une photo'),
-  // picture: yup.string().required("requis"),
 });
 
 
 
 const CommandeForm = () => {
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state)=>  state.user);
   const token = useSelector((state)=>  state.token);
 
   const isNonMobile = useMediaQuery("(min-width:600px)");
-  const [showPassword, setShowPassword] = useState(false);
   const [Send, setSend] = useState(false);
   const [images, setImages] = useState([]);
   const [Err, setErr] = useState();
@@ -63,7 +57,6 @@ const CommandeForm = () => {
     adresseD: {},
     adresseA: {},
     pictures: [],
-    // picture: "",
 
   };
 
@@ -72,9 +65,7 @@ const CommandeForm = () => {
     const formData = new FormData();
     formData.append("picture", values);
 
-    // for (let value in values) {
-    //   formData.append(value, values[value]);
-    // }
+    
     console.log(formData);
     const savedUserResponse = await fetch(
       "http://localhost:3001/imagePut",
@@ -119,15 +110,6 @@ const CommandeForm = () => {
       formData.append("images", values.pictures[0]);
       console.log(formData);
 
-      // const imagesFetch = await fetch('/upload-images', {   
-      //   method: "POST",
-      //   // headers: { Authorization: `Bearer ${token}` , 'Content-Type': 'application/json'},
-      //   body: formData
-      // }).catch((err)=>{
-      //   console.log(err.message);
-      // });
-
-      // console.log(imagesFetch);
   
       const response = await fetch(`http://localhost:3001/Commande`, {
         method: "POST",
@@ -191,7 +173,7 @@ const CommandeForm = () => {
         handleChange,
         handleSubmit,
         setFieldValue,
-        resetForm,
+        
       }) => (
         <form onSubmit={handleSubmit}>
           <Box
@@ -226,7 +208,6 @@ const CommandeForm = () => {
             <TextField
               label="Nom"
               onBlur={handleBlur}
-              // onChange={handleChange}
               value={values.Nom}
               name="Nom"
               error={Boolean(touched.Nom) && Boolean(errors.Nom)}
@@ -236,7 +217,6 @@ const CommandeForm = () => {
             <TextField
               label="Prenom"
               onBlur={handleBlur}
-              // onChange={handleChange}
               value={values.Prenom}
               name="Prenom"
               error={Boolean(touched.Prenom) && Boolean(errors.Prenom)}
@@ -285,8 +265,7 @@ const CommandeForm = () => {
                 acceptedFiles=".jpg,.jpeg,.png"
                 multiple={true}
                 onDrop={(acceptedFiles) => {
-                  // console.log(images);
-                  // console.log(acceptedFiles[0]);
+                 
 
                   setImages([...images, acceptedFiles[0]]);
                   setFieldValue("pictures", [...images, acceptedFiles[0]]);
@@ -311,32 +290,7 @@ const CommandeForm = () => {
                 )}
               </Dropzone>
 
-              {/* <Dropzone
-                    acceptedFiles=".jpg,.jpeg,.png"
-                    multiple={false}
-                    onDrop={(acceptedFiles) =>
-                      setFieldValue("picture", acceptedFiles[0])
-                    }
-                  >   
-                    {({ getRootProps, getInputProps }) => (
-                      <Box
-                        {...getRootProps()}
-                        border={`2px dashed #00D5FA`}
-                        p="1rem"
-                        sx={{ "&:hover": { cursor: "pointer" } }}
-                      >
-                        <input {...getInputProps()} />
-                        {!values.picture ? (
-                          <p>Add Picture Here</p>
-                        ) : (
-                          <Box >
-                            <Typography>{values.picture.name}</Typography>
-                            <EditOutlinedIcon />
-                          </Box>
-                        )}
-                      </Box>
-                    )}
-                  </Dropzone> */}
+              
             </Box>
 
             {images.length !== 0 &&(
@@ -400,24 +354,6 @@ const CommandeForm = () => {
               </div>
             </Button>
             {Err && <p className="error">{Err}</p>}
-            {/* <Typography
-               onClick={() => {
-                 setPageType(isLogin ? "register" : "login");
-                 resetForm();
-               }}
-               sx={{
-                 textDecoration: "underline",
-                 color: palette.primary.main,
-                 "&:hover": {
-                   cursor: "pointer",
-                   color: palette.primary.light,
-                 },
-               }}
-             >
-               {isLogin
-                 ? "Vous n'avez pas de compte ? Inscrivez-vous ici."
-                 : "Vous avez déjà un compte ? Connectez-vous ici."}
-             </Typography> */}
           </Box>
         </form>
       )}

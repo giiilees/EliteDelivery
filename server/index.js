@@ -88,6 +88,7 @@ app.use("/auth", authRoutes);
 
 
 const PORT = process.env.PORT || 6001;
+mongoose.set('strictQuery', false);
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -100,4 +101,4 @@ mongoose
   .catch((error) => console.log(`${error} did not connect`));
 
 
-  mongoose.set('strictQuery', true);
+  mongoose.set('strictQuery', false);

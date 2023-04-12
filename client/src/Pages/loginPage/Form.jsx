@@ -75,7 +75,7 @@ const Form = () => {
   const [Err, setErr] = useState();
 
   const register = async (values, onSubmitProps) => {
-    const Objec = {
+    const client = {
       nom: values.Nom,
       prenom: values.Prenom,
       email: values.email,
@@ -88,7 +88,7 @@ const Form = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(Objec),
+      body: JSON.stringify(client),
     })
       .then(async (data) => {
         const USER = await data.json();

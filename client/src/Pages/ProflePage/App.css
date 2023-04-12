@@ -1,0 +1,222 @@
+:root {
+  --yellow: linear-gradient(180deg, #f8d49a -146.42%, #fad79d -46.42%);
+  --orange: #fca61f;
+  --black: #242d49;
+  --gray: #788097;
+  --purple: linear-gradient(180deg, #bb67ff 0%, #c484f3 100%);
+  --pink: #ff919d;
+  --glass: rgba(255, 255, 255, 0.54);
+  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+  --activeItem: #f799a354;
+}
+
+.ProfApp {
+  /* padding: 0.5rem 3.5rem; */
+  color: var(--black);
+
+  /* height: "auto"; */
+  /* overflow: scroll;
+    scroll-behavior: smooth; */
+  width: 120%;
+  margin-left: -10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-family: 'Inter', sans-serif; */
+}
+
+.AppGlass {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  /* background: var(--glass); */
+  /* background: linear-gradient(
+    106.37deg,
+    #ffe1bc 29.63%,
+    #ffcfd1 51.55%,
+    #f3c6f1 90.85%
+  ); */
+  border-radius: 10px;
+  /* gap: 16px; */
+  grid-template-columns: 11rem auto 20rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+  .AppGlass {
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .AppGlass {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes moveMotorcycle {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.MotorcycleIcon {
+  animation: moveMotorcycle 5s linear infinite;
+}
+
+@keyframes moveOk {
+  0% {
+    /* transform: translateX(-50%); */
+    width: 60%;
+  }
+
+  50% {
+    /* transform: translateX(-50%); */
+    width: 50%;
+  }
+
+  100% {
+    /* transform: translateX(50%); */
+    width: 60%;
+  }
+}
+
+.OkIcon {
+  animation: moveOk 2s infinite;
+}
+
+.cardSuivie {
+  /* max-width: 320px; */
+  position: relative;
+  width: 75%;
+  height: 13rem;
+  text-align: center;
+  border-radius: 1rem;
+  /* background-color: rgba(31, 41, 55, 1); */
+  padding: 1rem;
+}
+
+.infosSuivie {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+.imageSuivie {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 0.5rem;
+  background-color: rgb(118, 36, 194);
+  background: linear-gradient(
+    to bottom right,
+    rgb(118, 36, 194),
+    rgb(185, 128, 240)
+  );
+}
+
+.infoSuivie {
+  height: 7rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nameSuivie {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  /* color: rgba(255, 255, 255, 1); */
+}
+
+.functionSuivie {
+  font-size: 0.75rem;
+  line-height: 1rem;
+
+  color: rgba(156, 163, 175, 1);
+}
+
+.statsSuivie {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgba(0, 0, 0, 1);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 4px;
+}
+
+.state-value {
+  font-weight: 700;
+  color: rgb(118, 36, 194);
+}
+
+.request {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.request:hover {
+  background-color: rgba(179, 216, 152, 0.518);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .cardSuivie {
+    /* max-width: 320px; */
+    position: relative;
+    width: 100%;
+    height: 23rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: rgba(31, 41, 55, 1);
+    padding: 1rem;
+  }
+
+  .infosSuivie {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    grid-gap: 1rem;
+    gap: 1rem;
+  }
+  .nameSuivie {
+    font-size: 1.1rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+.imgProd {
+  height: 112px;
+  width: 112px;
+}
